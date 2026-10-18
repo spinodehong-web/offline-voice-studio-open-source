@@ -4,6 +4,42 @@
 
 本仓库是 2.3 的独立源码发布，不包含历史私有仓库或验收资料，也不附带原使用者的35款声音参考、试听、录音、工程或模型权重。它不是包含模型的即装即用安装包。
 
+![离线配音工作室原生界面预览](docs/images/interface-preview.jpg)
+
+*真实原生窗口截图：未配置模型与参考音色的界面预览，没有生成或播放录音。*
+
+## 最快跑起来
+
+**先看界面：** Apple芯片Mac、macOS26.2及Python3.9+；需安装Apple命令行工具（尚未安装时执行 `xcode-select --install`）。不用先下载MLX、配音模型或参考声。
+
+```sh
+git clone https://github.com/spinodehong-web/offline-voice-studio-open-source.git
+cd offline-voice-studio-open-source
+python3 tools/preview_app.py --open
+```
+
+不使用Git也可[下载最新版源码ZIP](https://github.com/spinodehong-web/offline-voice-studio-open-source/archive/refs/heads/main.zip)，解压并进入目录后运行上面的第三条命令。
+
+首次会编译并打开真正的原生界面；之后直接打开 `build/OfflineVoiceStudioPreview.app`。可编辑文稿、查找替换、查看项目窗口。预览使用独立数据目录，生成按钮保持禁用。
+
+**要实际配音：** 界面预览不是可搬移安装包，不具备完整配音环境。先按下面的“环境与资源”准备Python3.12独立运行时、FFmpeg、ASR和自己有权使用的参考声，再按“构建”执行；最后用“导入模型包”导入Base模型。仓库目前提供源码下载，没有承诺下载后即可直接配音的App/DMG。
+
+若已准备好 `runtime/`、`local-assets/resources/`、本地参考声及模型目录，最短完整流程是：
+
+```sh
+python3 tools/add_local_voice.py --output local-assets/voices \
+  --id local-voice --name '我的本地声音' \
+  --wav /path/to/owned-reference.wav --text-file /path/to/transcript.txt \
+  --listening-confirmed
+python3 tools/build_app.py --runtime runtime \
+  --assets local-assets/resources --voices local-assets/voices \
+  --output dist/OfflineVoiceStudioOpenSource.app
+python3 tools/package_models.py --models /path/to/models --output dist/model-packs
+open dist/OfflineVoiceStudioOpenSource.app
+```
+
+打开后导入 `dist/model-packs/VoiceModel-Identity.zip`，选择本地声音，输入一小段文稿，再生成、试听、导出WAV。这里的路径是占位示例，资源不会被脚本自动下载。`--listening-confirmed` 只适用于本人确实听过并确认的参考录音。
+
 ## 能做什么
 
 - 中文、英文文稿配音，文稿计数、导入、查找替换、撤销重做。

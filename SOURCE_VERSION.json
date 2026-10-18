@@ -15,7 +15,6 @@
     "library_production.py"
   ],
   "unchanged_core_modules": [
-    "ProjectEditor.swift",
     "studio_release.py",
     "project_studio.py",
     "audition_qa.py",
@@ -29,7 +28,8 @@
   "public_fork_adaptations": [
     "Separate default application data directory and bundle identifier",
     "Empty local-voice catalog; private reference and audition audio are excluded",
-    "Portable source-build and local-resource preparation tools"
+    "Portable source-build and local-resource preparation tools",
+    "Project window describes local configured voices without the private35-voice claim"
   ],
   "original_source_sha256": {
     "VoiceStudio.swift": "accc0b08d38e0003dcd5c2d1cdc5933cead36eaa0726fb6f3a5b7cb85565f555",
