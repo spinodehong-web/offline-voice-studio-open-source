@@ -1,0 +1,14 @@
+{
+  "version": "public-source-2.3",
+  "engine": "Qwen3-TTS Base / MLX",
+  "pacing": {
+    "tempo": 1.1556521739130432,
+    "sentence_gap": 0.65
+  },
+  "level_guard": {
+    "enabled": true,
+    "minimum_drop_db": 4,
+    "retain_drop_db": 1.5,
+    "max_boost_db": 6
+  }
+}

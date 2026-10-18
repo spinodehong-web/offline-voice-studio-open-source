@@ -1,0 +1,56 @@
+{
+  "version": "2.3",
+  "application_source_files": [
+    "VoiceStudio.swift",
+    "ProjectEditor.swift",
+    "worker.py",
+    "studio_release.py",
+    "project_studio.py",
+    "audition_qa.py",
+    "signal_integrity.py",
+    "cadence.py",
+    "drift.py",
+    "finish.py",
+    "voice_library.py",
+    "library_production.py"
+  ],
+  "unchanged_core_modules": [
+    "ProjectEditor.swift",
+    "studio_release.py",
+    "project_studio.py",
+    "audition_qa.py",
+    "signal_integrity.py",
+    "cadence.py",
+    "drift.py",
+    "finish.py",
+    "voice_library.py",
+    "library_production.py"
+  ],
+  "public_fork_adaptations": [
+    "Separate default application data directory and bundle identifier",
+    "Empty local-voice catalog; private reference and audition audio are excluded",
+    "Portable source-build and local-resource preparation tools"
+  ],
+  "original_source_sha256": {
+    "VoiceStudio.swift": "accc0b08d38e0003dcd5c2d1cdc5933cead36eaa0726fb6f3a5b7cb85565f555",
+    "ProjectEditor.swift": "908d251951c781f055b3d3e4506f6cd64824598fc753e6d5477be2caa6f8b0d2",
+    "worker.py": "22e628be95f59013f59cd6c8fe6acf310c0a7223bdc555cfcf834681b862cc91",
+    "studio_release.py": "6c5c4b55539e5c4fd5aff6f4108f034afdd6042b4c96bfbc7a4630ca7c623296",
+    "project_studio.py": "b44e6c9d8b29b3d10e934b45970b00369780d4ca6fe3ee361cd19697770edf36",
+    "audition_qa.py": "2c37b7ad1c9d84a01532240107a87534453cf932299de45dc098b467b1f5e153",
+    "signal_integrity.py": "209bedb7b93e737543433303247dc525d9602a3c11014f77ed742fc21a89a74c",
+    "cadence.py": "c1f6f1478d3a3cd47980d119ed6efe8847f6717724aa295d0838d431a5bdaff6",
+    "drift.py": "545b5393690559852acdfdc0223951efb221bff1081cecd7379a34ac545c0a96",
+    "finish.py": "5efd1738a950c08303eb0ce5f0df33ad34b393cb551ac4a31f60461533a72e71",
+    "voice_library.py": "b3d3bcd7c6160bfefb9cf8d205cb13843ddc7a275a295cba1c41fbd8b63606be",
+    "library_production.py": "803cacb6ed286b00c0a0dbcfd429544e3e67c9d93e05e26ffde029e45699ec13"
+  },
+  "excluded": [
+    "private Git history",
+    "models and SDK binaries",
+    "reference and audition audio",
+    "recordings and projects",
+    "human feedback and research evidence",
+    "credentials and personal configuration"
+  ]
+}

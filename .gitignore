@@ -1,0 +1,25 @@
+# Local runtime, assets, models and output are never source publication inputs.
+build/
+dist/
+local-assets/
+private-assets/
+runtime/
+.venv*/
+__pycache__/
+*.pyc
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.mp4
+*.dmg
+*.zip
+*.safetensors
+*.onnx
+*.sqlite*
+*.db
+.env*
+*.key
+*.pem
+*.p12
+.DS_Store
