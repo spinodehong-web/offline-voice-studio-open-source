@@ -9,6 +9,9 @@ import subprocess
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+# Same tested minimum as tools/preview_app.py; compile target and Info.plist must agree.
+MIN_MACOS = '26.2'
+SWIFT_TARGET = 'arm64-apple-macos'+MIN_MACOS
 
 
 def run(args):
@@ -92,12 +95,12 @@ def main():
         run([python, '-I', '-c', code])
     module_cache = ROOT/'build/SwiftModuleCache'
     module_cache.mkdir(parents=True, exist_ok=True)
-    run(['swiftc','-O','-module-cache-path',module_cache,'-parse-as-library','-target','arm64-apple-macos14.0',
+    run(['swiftc','-O','-module-cache-path',module_cache,'-parse-as-library','-target',SWIFT_TARGET,
          ROOT/'src/VoiceStudio.swift',ROOT/'src/ProjectEditor.swift','-o',output/'Contents/MacOS/OfflineVoiceStudio',
          '-framework','Cocoa','-framework','AVFoundation','-framework','UniformTypeIdentifiers','-framework','CryptoKit'])
     info = dict(CFBundleName='离线配音工作室 开源版',CFBundleDisplayName='离线配音工作室 开源版',
         CFBundleIdentifier='com.spinode.offline-voice-studio.opensource',CFBundleExecutable='OfflineVoiceStudio',
-        CFBundlePackageType='APPL',CFBundleShortVersionString='2.3',CFBundleVersion='230',LSMinimumSystemVersion='26.2',
+        CFBundlePackageType='APPL',CFBundleShortVersionString='2.3',CFBundleVersion='230',LSMinimumSystemVersion=MIN_MACOS,
         NSHighResolutionCapable=True,NSHumanReadableCopyright='Copyright2026 spinodehong-web. MIT License.')
     (output/'Contents/Info.plist').write_bytes(plistlib.dumps(info))
     run(['codesign','--force','--deep','--sign','-',output])
