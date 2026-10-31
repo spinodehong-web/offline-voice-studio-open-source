@@ -33,7 +33,7 @@ PRIVACY / 隐私政策
 
 App Store的下载、购买、系统诊断及你选择向苹果提供的信息，由苹果按照其政策处理。本产品不接收你的付款卡号或Apple账号密码。开发者可能获得苹果按系统设置提供的汇总报告或诊断信息，这与本应用主动上传创作内容不同。
 
-本支持网站是静态说明页，不嵌入分析脚本、广告、追踪像素、第三方字体、上传表单或音频播放器。网站托管方GitHub可能记录访问IP等服务日志。打开GitHub问题区或苹果网站后，适用相应网站的政策：[GitHub隐私声明](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)、[苹果隐私政策](https://www.apple.com/legal/privacy/)。
+我们撰写的支持与隐私说明正文不嵌入分析脚本、广告、追踪像素、第三方字体、上传表单或音频播放器。当前公开网址使用GitHub文档页面，GitHub界面自身可能使用脚本、Cookie和服务日志（包括IP地址），其数据处理由GitHub隐私声明说明。打开GitHub问题区或苹果网站后，适用相应网站的政策：[GitHub隐私声明](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement)、[苹果隐私政策](https://www.apple.com/legal/privacy/)。
 
 ## 7. 联系与更新
 
